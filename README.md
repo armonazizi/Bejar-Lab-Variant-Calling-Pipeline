@@ -69,5 +69,5 @@ wget https://github.com/broadinstitute/picard/releases/download/2.18.7/picard.ja
 #### Freebayes
 ```shell
 conda install -c bioconda freebayes
-'''
+```
 
