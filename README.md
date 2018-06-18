@@ -46,16 +46,16 @@ conda install -c bioconda -c conda-forge snakemake
 ```
 
 #### multiqc
-'''shell
+```shell
 conda install multiqc
-'''
+```
 
 #### trim_galore
-'''shell
+```shell
 wget https://github.com/FelixKrueger/TrimGalore/archive/0.4.5.zip
 
 unzip 0.4.5.zip
-'''
+```
 
 Add path to trim_galore executable to .bashrc
 
