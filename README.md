@@ -18,9 +18,11 @@ The pipeline utilizes the following tools that are already installed on the TSCC
 * samtools
 
 
-### Installation
+### Manual Installation
 
 The following are instructions for installing all dependencies for the pipeline.
+
+Follow the instructions below to install each tool separately or to install using custom parameters. Alternatively, skip to scipt installation for instructions on how to run the install script.
 
 #### Snakemake
 
@@ -71,5 +73,30 @@ wget https://github.com/broadinstitute/picard/releases/download/2.18.7/picard.ja
 #### Freebayes
 ```shell
 conda install -c bioconda freebayes
+```
+
+### Script Installation
+
+To install using a script, conda with python 3 must already be installed on the system. Then, run install.sh. This script will install the dependencies into the users home directory in the bejar_variant_dependencies directory.
+
+```shell
+./install.sh
+```
+
+
+### Running The Pipeline
+Running the pipeline is relatively simple. The script command is a one-liner and will submit all jobs to the TSCC using PBS scripts.
+
+First, files must be appropriately named. The current naming scheme is for each paired end sample to have one name followed by paired identifiers.
+* {NAME}.read1.gz
+* {NAME}.read2.gz
+
+Alternitively, The main script can be modified to accept differently named files.
+
+All fastq files should be in a directory titled fastq, and the snakemake script should be run in the 'fastq' parent directory.
+
+Command to run pipeline:
+```shell
+snakemake -s variant.py -j <Maximum Number of jobs to submit concurrently> --cluster "qsub -q {params.queue} -l {params.time} -l {params.nodes}"
 ```
 
