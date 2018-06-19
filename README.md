@@ -75,6 +75,17 @@ wget https://github.com/broadinstitute/picard/releases/download/2.18.7/picard.ja
 conda install -c bioconda freebayes
 ```
 
+#### Bowtie index
+```shell
+wget ftp://ftp.ccb.jhu.edu/pub/data/bowtie_indexes/hg19.ebwt.zip
+
+unzip hg19.ebwt.zip
+```
+
+#### UCSC Index
+To get the raw hg19 fasta file, the compressed version must be downloaded, unzipped, and indexed.
+
+
 ### Script Installation
 
 To install using a script, conda with python 3 must already be installed on the system. Then, run install.sh. This script will install the dependencies into the users home directory in the bejar_variant_dependencies directory.
