@@ -52,6 +52,8 @@ conda install multiqc
 
 #### trim_galore
 ```shell
+conda install -c bioconda cutadapt
+
 wget https://github.com/FelixKrueger/TrimGalore/archive/0.4.5.zip
 
 unzip 0.4.5.zip
