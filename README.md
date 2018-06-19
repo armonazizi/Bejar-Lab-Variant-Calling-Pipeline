@@ -95,8 +95,12 @@ Alternitively, The main script can be modified to accept differently named files
 
 All fastq files should be in a directory titled fastq, and the snakemake script should be run in the 'fastq' parent directory.
 
+The '-n' flag can be added to the following command to do a "dry run" of the pipeline. This will output all steps that will be taken without actually executing them.
+
 Command to run pipeline:
 ```shell
 snakemake -s variant.py -j <Maximum Number of jobs to submit concurrently> --cluster "qsub -q {params.queue} -l {params.time} -l {params.nodes}"
 ```
+
+If the pipeline crashes or times out midway through the analysis, it can be started again without redoing the analysis that was already completed. In order to do this, delete all files that are incomplete, or that were being generated when the pipeline crashed. Then, run the command that was used to start the pipeline.
 
