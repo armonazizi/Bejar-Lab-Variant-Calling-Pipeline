@@ -85,6 +85,16 @@ unzip hg19.ebwt.zip
 #### UCSC Index
 To get the raw hg19 fasta file, the compressed version must be downloaded, unzipped, and indexed.
 
+```shell
+wget http://hgdownload.cse.ucsc.edu/admin/exe/linux.x86_64/twoBitToFa
+
+chmod 775 twoBitToFa
+
+wget http://hgdownload.cse.ucsc.edu/goldenPath/hg19/bigZips/hg19.2bit
+
+./twoBitToFa hg19.2bit hg19.ucsc.fasta
+```
+
 
 ### Script Installation
 
