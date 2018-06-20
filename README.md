@@ -56,18 +56,16 @@ conda install multiqc
 ```shell
 conda install -c bioconda cutadapt
 
-wget https://github.com/FelixKrueger/TrimGalore/archive/0.4.5.zip
+wget -P ~/bejar_variant_dependencies/trim_galore https://github.com/FelixKrueger/TrimGalore/archive/0.4.5.zip
 
-unzip 0.4.5.zip
+unzip ~/bejar_variant_dependencies/trim_galore/0.4.5.zip
 ```
-
-Add path to trim_galore executable to .bashrc
 
 
 #### Picard
 
 ```shell
-wget https://github.com/broadinstitute/picard/releases/download/2.18.7/picard.jar
+wget -P ~/bejar_variant_dependencies/Picard https://github.com/broadinstitute/picard/releases/download/2.18.7/picard.jar
 ```
 
 #### Freebayes
@@ -77,22 +75,22 @@ conda install -c bioconda freebayes
 
 #### Bowtie index
 ```shell
-wget ftp://ftp.ccb.jhu.edu/pub/data/bowtie_indexes/hg19.ebwt.zip
+wget -P ~/bejar_variant_dependencies/reference_genomes/bowtie ftp://ftp.ccb.jhu.edu/pub/data/bowtie_indexes/hg19.ebwt.zip
 
-unzip hg19.ebwt.zip
+unzip ~/bejar_variant_dependencies/reference_genomes/bowtie/hg19.ebwt.zip
 ```
 
 #### UCSC Index
 To get the raw hg19 fasta file, the compressed version must be downloaded, unzipped, and indexed.
 
 ```shell
-wget http://hgdownload.cse.ucsc.edu/admin/exe/linux.x86_64/twoBitToFa
+wget -P ~/bejar_variant_dependencies/reference_genomes/raw http://hgdownload.cse.ucsc.edu/admin/exe/linux.x86_64/twoBitToFa
 
-chmod 775 twoBitToFa
+chmod 775 ~/bejar_variant_dependencies/reference_genomes/raw/twoBitToFa
 
-wget http://hgdownload.cse.ucsc.edu/goldenPath/hg19/bigZips/hg19.2bit
+wget -P ~/bejar_variant_dependencies/reference_genomes/raw http://hgdownload.cse.ucsc.edu/goldenPath/hg19/bigZips/hg19.2bit
 
-./twoBitToFa hg19.2bit hg19.ucsc.fasta
+./~/bejar_variant_dependencies/reference_genomes/raw/twoBitToFa ~/bejar_variant_dependencies/reference_genomes/raw/hg19.2bit ~/bejar_variant_dependencies/reference_genomes/raw/hg19.ucsc.fasta
 ```
 
 
