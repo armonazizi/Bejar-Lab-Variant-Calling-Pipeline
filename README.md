@@ -98,6 +98,14 @@ bgzip ~/bejar_variant_dependencies/reference_genomes/raw/hg19.ucsc.fasta
 tabix -p vcf ~/bejar_variant_dependencies/reference_genomes/raw/hg19.ucsc.fasta.gz
 ```
 
+#### vcf Filter Sites
+
+In order to filter out unwanted variants, the pipeline takes one vcf file containing all unwanted sites and removes these variants from the final output. In order to obtain this file, the user must manually generate it to the wanted specifications. Alternitively, there is a filter file containing common ExAC sites with the exception of common mutation sites found in cosmic that can be found in the bejar lab files.
+
+Download the vcf file. It's path should be the following:
+```shell
+~/bejar_variant_dependencies/vcfs/filter_sites.vcf
+```
 
 ### Script Installation
 
