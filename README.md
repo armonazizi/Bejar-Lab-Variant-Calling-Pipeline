@@ -119,6 +119,7 @@ zcat <Input.vcf.gz> | awk -v OFS='\t' '/^#/{print $0;} !/^#/{$1="chr"$1; print}'
 tabix -p vcf <output from previous command>
 ```
 
+Note: it's a good idea to do this step in the oasis filesystem because the vcf files can get very large. Oasis is optimized to handle large files, but your home directory can run out of space easily.
 
 ### Script Installation
 
