@@ -91,6 +91,11 @@ chmod 775 ~/bejar_variant_dependencies/reference_genomes/raw/twoBitToFa
 wget -P ~/bejar_variant_dependencies/reference_genomes/raw http://hgdownload.cse.ucsc.edu/goldenPath/hg19/bigZips/hg19.2bit
 
 ./~/bejar_variant_dependencies/reference_genomes/raw/twoBitToFa ~/bejar_variant_dependencies/reference_genomes/raw/hg19.2bit ~/bejar_variant_dependencies/reference_genomes/raw/hg19.ucsc.fasta
+
+module load bcftools
+
+bgzip ~/bejar_variant_dependencies/reference_genomes/raw/hg19.ucsc.fasta
+tabix -p vcf ~/bejar_variant_dependencies/reference_genomes/raw/hg19.ucsc.fasta.gz
 ```
 
 
