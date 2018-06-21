@@ -126,6 +126,8 @@ Note: it's a good idea to do this step in the oasis filesystem because the vcf f
 To install using a script, conda with python 3 must already be installed on the system. Then, run install.sh. This script will install the dependencies into the users home directory in the bejar_variant_dependencies directory.
 
 ```shell
+chmod 775 install.sh
+
 ./install.sh
 ```
 
