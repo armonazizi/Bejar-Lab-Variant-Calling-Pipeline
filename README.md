@@ -102,10 +102,13 @@ tabix -p vcf ~/bejar_variant_dependencies/reference_genomes/raw/hg19.ucsc.fasta.
 
 In order to filter out unwanted variants, the pipeline takes one vcf file containing all unwanted sites and removes these variants from the final output. In order to obtain this file, the user must manually generate it to the wanted specifications. Alternitively, there is a filter file containing common ExAC sites with the exception of common mutation sites found in cosmic that can be found in the bejar lab files.
 
-Download the vcf file. It's path should be the following:
+After obtaining the vcf file, it's path should be the following:
 ```shell
 ~/bejar_variant_dependencies/vcfs/filter_sites.vcf
 ```
+
+Note: if downloading the vcf file from ExAC or cosmic, the chromosomes must be renamed to match the freebayes vcf output. For example, in the chromosome column, '1' should be renamed to 'chr1' etc.
+
 
 ### Script Installation
 
