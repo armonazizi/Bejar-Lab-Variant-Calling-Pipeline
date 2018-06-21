@@ -22,7 +22,7 @@ The pipeline utilizes the following tools that are already installed on the TSCC
 
 The following are instructions for installing all dependencies for the pipeline.
 
-Follow the instructions below to install each tool separately or to install using custom parameters. Alternatively, skip to scipt installation for instructions on how to run the install script.
+Follow the instructions below to install each tool separately or to install using custom parameters. Alternatively, skip to script installation for instructions on how to run the install script.
 
 #### Snakemake
 
