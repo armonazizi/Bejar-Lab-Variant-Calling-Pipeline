@@ -109,6 +109,16 @@ After obtaining the vcf file, it's path should be the following:
 
 Note: if downloading the vcf file from ExAC or cosmic, the chromosomes must be renamed to match the freebayes vcf output. For example, in the chromosome column, '1' should be renamed to 'chr1' etc.
 
+To do this, an awk one-liner can be used. The following script takes as input a compressed vcf file and appends 'chr' to the relevant lines, ignoring headers. It then indexes the file with tabix. (replace input and output with relevant filenames)
+
+```shell
+module load bcftools
+
+zcat <Input.vcf.gz> | awk -v OFS='\t' '/^#/{print $0;} !/^#/{$1="chr"$1; print}' | bgzip > <output.vcf.gz>
+
+tabix -p vcf <output from previous command>
+```
+
 
 ### Script Installation
 
