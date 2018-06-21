@@ -100,7 +100,7 @@ tabix -p vcf ~/bejar_variant_dependencies/reference_genomes/raw/hg19.ucsc.fasta.
 
 #### vcf Filter Sites
 
-In order to filter out unwanted variants, the pipeline takes one vcf file containing all unwanted sites and removes these variants from the final output. In order to obtain this file, the user must manually generate it to the wanted specifications. Alternitively, there is a filter file containing common ExAC sites with the exception of common mutation sites found in cosmic that can be found in the bejar lab files.
+In order to filter out unwanted variants, the pipeline takes one vcf file containing all unwanted sites and removes these variants from the final output, or a 'blacklist' of sites. In order to obtain this file, the user must manually generate it to the wanted specifications. Alternitively, there is a filter file containing common ExAC sites with the exception of common mutation sites found in cosmic that can be found in the bejar lab files.
 
 After obtaining the vcf file, it's path should be the following:
 ```shell
@@ -117,6 +117,8 @@ To install using a script, conda with python 3 must already be installed on the 
 ```shell
 ./install.sh
 ```
+
+Note: Script installation will not download the blacklist vcf file. It must be downloaded separately before running the pipeline.
 
 
 ### Running The Pipeline
